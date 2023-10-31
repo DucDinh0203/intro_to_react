@@ -19,8 +19,11 @@ const SearchParams = () => {
     const res = await fetch(
       `http://pets-v2.dev-apis.com/pets?animal=${animal}&location=${location}&breed=${breed}`
     );
-    const json = await res.json();
-    setPets(json.pets);
+    const petInfo = await res.json();
+    // console.log("pets", pets);
+    // console.log("petInfo: ", petInfo);
+    // console.log("petInfo.pets: ", petInfo.pets);
+    setPets(petInfo.pets);
   };
   
 
@@ -81,8 +84,8 @@ const SearchParams = () => {
         pets.map((pet) => (
           <Pet 
             name={pet.name}
-            animal={pet.animal} 
-            breed={pet.breed} 
+            animal={pet.animal}
+            breed={pet.breed}
             key={pet.id}
           />
         ))
