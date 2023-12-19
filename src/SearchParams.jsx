@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react";
-// import Wine from "./Wine";
 import Pet from "./Pet";
+import useBreedList from "./useBreedList";
 const ANIMALS = ["bird", "cat", "dog", "rabbit", "reptile"];
 
 const SearchParams = () => {
   const [pets, setPets] = useState([]);
-  // const [wines, setWines] = useState([]);
   const [location, setLocation] = useState("");
   const [animal, setAnimal] = useState("");
   const [breed, setBreed] = useState("");
-  const breeds = [];
+  const breeds = useBreedList(animal);
 
   useEffect(() => {
     requestPets();
@@ -20,7 +19,6 @@ const SearchParams = () => {
       `http://pets-v2.dev-apis.com/pets?animal=${animal}&location=${location}&breed=${breed}`
     );
     const json = await res.json();
-
     setPets(json.pets);
   }
 
