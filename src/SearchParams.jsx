@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
+// import Wine from "./Wine";
 import Pet from "./Pet";
 const ANIMALS = ["bird", "cat", "dog", "rabbit", "reptile"];
 
 const SearchParams = () => {
   const [pets, setPets] = useState([]);
+  // const [wines, setWines] = useState([]);
   const [location, setLocation] = useState("");
   const [animal, setAnimal] = useState("");
   const [breed, setBreed] = useState("");
