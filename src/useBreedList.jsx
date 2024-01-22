@@ -38,5 +38,5 @@ export default function useBreedList(animal) {
   const results = useQuery(["breeds", animal], fetchBreedList);
 
   return [results?.data?.breeds ?? [], results.status];
-  // if results.data?.breeds fail, return empty array
+  // if results.data?.breeds fail, return empty array. otherwise, return results.data
 }
