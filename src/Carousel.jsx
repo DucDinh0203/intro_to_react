@@ -3,7 +3,7 @@ import { Component } from "react";
 class Carousel extends Component {
   state = {
     active: 0,
-  };
+  }; // active state of photo in the set of photos, for example 5 photos, the photos with id 0 will be active
 
   static defaultProps = {
     images: ["http;//pets-images.dev-apis.com/pets/none.jpg"],
@@ -16,7 +16,7 @@ class Carousel extends Component {
 
   handleIndexClick = (e) => {
     this.setState({
-      active: e.target.dataset.index,
+      active: +e.target.dataset.index,
     });
   };
 
